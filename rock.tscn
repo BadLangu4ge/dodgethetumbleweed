@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://c6q60jebxi4pu"]
+
+[ext_resource type="Script" uid="uid://bgqw677gh34wu" path="res://rock.gd" id="1_68h2w"]
+[ext_resource type="Texture2D" uid="uid://c3ji6q6l412fl" path="res://tumbleweed1.png" id="2_68h2w"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_uagv5"]
+radius = 28.071308
+
+[node name="Node2D" type="Node2D" unique_id=1251566217]
+position = Vector2(0, 3)
+
+[node name="rock" type="Area2D" parent="." unique_id=1135733269]
+position = Vector2(276, 187)
+script = ExtResource("1_68h2w")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="rock" unique_id=1177835435]
+position = Vector2(3.0517578e-05, -3)
+shape = SubResource("CircleShape2D_uagv5")
+
+[node name="Sprite2D" type="Sprite2D" parent="rock" unique_id=1769548132]
+position = Vector2(1, -4)
+scale = Vector2(0.20241287, 0.20241287)
+texture = ExtResource("2_68h2w")
+
+[connection signal="body_entered" from="rock" to="rock" method="_on_body_entered"]
